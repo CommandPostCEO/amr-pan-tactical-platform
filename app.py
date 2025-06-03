@@ -1,5 +1,5 @@
 # AMR PAN TACTICAL INTELLIGENCE PLATFORM
-# ENTERPRISE VISUAL EXCELLENCE - TACTICAL REDESIGN
+# ENTERPRISE VISUAL EXCELLENCE - SYNTAX FIXED VERSION
 # Phase 3A: Professional Military-Grade Interface
 
 import streamlit as st
@@ -8,11 +8,10 @@ import numpy as np
 from datetime import datetime
 from typing import Dict, List
 import io
-import base64
 
 # TACTICAL CONFIGURATION
 st.set_page_config(
-    page_title="🫡 AMR Tactical Intelligence",
+    page_title="AMR Tactical Intelligence",
     page_icon="🫡",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -174,22 +173,6 @@ st.markdown("""
         box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
     }
     
-    /* Sidebar styling */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #1e293b 0%, #334155 100%);
-    }
-    
-    .css-1d391kg .css-1v0mbdj {
-        color: white;
-    }
-    
-    .sidebar .element-container {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
-    
     /* Tab styling */
     .stTabs [data-baseweb="tab-list"] {
         background: #f1f5f9;
@@ -260,13 +243,6 @@ st.markdown("""
         margin: 1rem 0;
         color: #065f46;
         font-weight: 500;
-    }
-    
-    /* Table styling */
-    .dataframe {
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 </style>
 """, unsafe_allow_html=True)
@@ -415,7 +391,7 @@ class AMRPANTacticalPlatform:
         """Generate executive-level tactical dashboard"""
         
         # Tactical Header with Logo
-        st.markdown(f"""
+        st.markdown("""
         <div class="tactical-header">
             <div class="tactical-logo">🫡</div>
             <h1>AMR PAN TACTICAL INTELLIGENCE</h1>
@@ -528,11 +504,12 @@ class AMRPANTacticalPlatform:
         
         with col1:
             # Quality score display with enhanced styling
+            score_color = '#10b981' if quality_score >= 90 else '#f59e0b' if quality_score >= 80 else '#ef4444'
             st.markdown(f"""
             <div class="metric-card" style="text-align: center; padding: 2rem;">
                 <div class="metric-icon" style="font-size: 3rem;">🎯</div>
                 <h3>Overall Quality Score</h3>
-                <h2 style="font-size: 3rem; color: {'#10b981' if quality_score >= 90 else '#f59e0b' if quality_score >= 80 else '#ef4444'};">{quality_score}%</h2>
+                <h2 style="font-size: 3rem; color: {score_color};">{quality_score}%</h2>
                 <p style="font-size: 1.1rem;"><strong>{self.get_quality_grade(quality_score)}</strong></p>
             </div>
             """, unsafe_allow_html=True)
@@ -605,7 +582,7 @@ CARRIER DISTRIBUTION INTELLIGENCE
             percentage = (count / analysis.get('total_pans', 1)) * 100
             report += f"{carrier}: {count:,} PANs ({percentage:.1f}%)\n"
         
-        report += f"""
+        report += """
 
 CRITICAL ISSUES ASSESSMENT
 ==========================
@@ -616,7 +593,7 @@ CRITICAL ISSUES ASSESSMENT
         if not analysis.get('critical_issues'):
             report += "✅ No critical issues detected - Mission ready status maintained\n"
         
-        report += f"""
+        report += """
 
 TACTICAL RECOMMENDATIONS
 ========================
@@ -733,4 +710,132 @@ def main():
                         <div class="metric-card" style="text-align: left;">
                             <h3>{row['Status']}</h3>
                             <h2>{row['Count']:,}</h2>
-                            <p>{percentage:.
+                            <p>{percentage:.1f}% of total</p>
+                        </div>
+                        """, unsafe_allow_html=True)
+            
+            with tab4:
+                st.markdown("## 📋 Tactical Intelligence Reporting")
+                
+                # Enhanced report generation
+                col1, col2 = st.columns([2, 1])
+                
+                with col1:
+                    tactical_report = platform.export_tactical_report(analysis_results)
+                    st.text_area("📄 Executive Report", tactical_report, height=500)
+                
+                with col2:
+                    st.markdown("### 📥 Export Options")
+                    
+                    # Download button with enhanced styling
+                    report_filename = f"AMR_PAN_Tactical_Report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+                    
+                    st.download_button(
+                        label="📥 Download Tactical Report",
+                        data=tactical_report,
+                        file_name=report_filename,
+                        mime="text/plain"
+                    )
+                    
+                    st.markdown("### 📊 Report Summary")
+                    st.markdown(f"""
+                    <div class="metric-card">
+                        <h3>Report Generated</h3>
+                        <h2>{datetime.now().strftime('%H:%M')}</h2>
+                        <p>{datetime.now().strftime('%Y-%m-%d')}</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                    
+                    st.markdown(f"""
+                    <div class="metric-card">
+                        <h3>Data Points</h3>
+                        <h2>{analysis_results.get('total_pans', 0):,}</h2>
+                        <p>PANs Analyzed</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+    
+    else:
+        # Enhanced welcome screen
+        st.markdown("""
+        <div class="tactical-header">
+            <div class="tactical-logo">🫡</div>
+            <h1>AMR PAN TACTICAL INTELLIGENCE</h1>
+            <h3>Phase 3A: Enterprise Deployment • Ready for Mission Excellence</h3>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Mission objectives grid
+        col1, col2 = st.columns([2, 1])
+        
+        with col1:
+            st.markdown("## 🚀 Mission Objectives")
+            
+            objectives = [
+                ("📊", "Real-time PAN governance analysis", "Process 1M+ records with enterprise performance"),
+                ("🎯", "Data quality intelligence", "95%+ accuracy with automated issue detection"),
+                ("🚛", "Comprehensive carrier analysis", "UPS, FedEx, DHL strategic intelligence"),
+                ("📋", "Executive tactical reports", "C-level ready intelligence briefings"),
+                ("⚡", "Enterprise performance", "Sub-30 second processing for large datasets")
+            ]
+            
+            for icon, title, desc in objectives:
+                st.markdown(f"""
+                <div class="metric-card" style="text-align: left; margin: 1rem 0;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="font-size: 1.5rem; margin-right: 1rem;">{icon}</div>
+                        <div>
+                            <h3 style="margin: 0; color: #1e293b;">{title}</h3>
+                            <p style="margin: 0.25rem 0 0 0; color: #64748b;">{desc}</p>
+                        </div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown("## 🎖️ Platform Status")
+            
+            status_items = [
+                ("Phase 3A Deployment", "✅ OPERATIONAL", "#10b981"),
+                ("Platform Version", f"{platform.version}", "#3b82f6"),
+                ("Classification", "TACTICAL INTELLIGENCE", "#f59e0b"),
+                ("Security Status", "ENTERPRISE GRADE", "#10b981"),
+                ("Performance", "OPTIMIZED", "#10b981")
+            ]
+            
+            for label, value, color in status_items:
+                st.markdown(f"""
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin: 0.5rem 0; border-left: 4px solid {color};">
+                    <strong style="color: #1e293b;">{label}:</strong><br>
+                    <span style="color: {color}; font-weight: 600;">{value}</span>
+                </div>
+                """, unsafe_allow_html=True)
+        
+        # Instructions section
+        st.markdown("## 🎯 Begin Tactical Operations")
+        
+        instructions = [
+            "Upload your AMR PAN Excel files using the tactical controls sidebar",
+            "Platform will automatically process and analyze your intelligence data",
+            "Review comprehensive tactical intelligence across multiple operational views", 
+            "Export executive reports for strategic distribution and decision-making"
+        ]
+        
+        for i, instruction in enumerate(instructions, 1):
+            st.markdown(f"""
+            <div class="metric-card" style="text-align: left;">
+                <div style="display: flex; align-items: center;">
+                    <div style="background: #3b82f6; color: white; border-radius: 50%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; margin-right: 1rem; font-weight: bold;">{i}</div>
+                    <p style="margin: 0; color: #1e293b; font-weight: 500;">{instruction}</p>
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        # Final status banner
+        st.markdown("""
+        <div class="status-excellent" style="margin-top: 3rem;">
+            🎖️ PLATFORM STATUS: MISSION READY FOR TACTICAL EXCELLENCE
+        </div>
+        """, unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    main()
