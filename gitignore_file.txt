@@ -1,0 +1,268 @@
+# 🫡 AMR PAN TACTICAL INTELLIGENCE PLATFORM
+# SECURITY-HARDENED .gitignore CONFIGURATION
+# Phase 3A: Production Deployment Protection
+
+# 🛡️ CRITICAL SECURITY - NEVER COMMIT THESE FILES
+.streamlit/secrets.toml
+secrets.toml
+*.key
+*.pem
+*.p12
+*.pfx
+config.ini
+.env
+.env.*
+
+# 📊 AMR DATA PROTECTION - OPERATIONAL DATA NEVER COMMITTED
+AMR_*.xlsx
+*_PAN_*.xlsx
+*PAN*.xlsx
+Validated*.xlsx
+*.csv
+data/
+uploads/
+exports/
+tactical_data/
+
+# 🔐 AUTHENTICATION & CREDENTIALS
+auth.json
+credentials.json
+token.json
+*.token
+passwords.txt
+api_keys.txt
+service_account.json
+
+# 📱 PLATFORM GENERATED FILES
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 🧪 DEVELOPMENT & TESTING
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# 🔍 IDE & EDITOR FILES
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 📝 LOGS & DEBUGGING
+*.log
+logs/
+debug.log
+error.log
+access.log
+streamlit.log
+tactical_logs/
+
+# 🚀 DEPLOYMENT ARTIFACTS
+.deployment/
+deployment_temp/
+build_artifacts/
+release_notes.txt
+
+# 📊 PERFORMANCE & MONITORING
+profiling/
+benchmarks/
+performance_logs/
+memory_dumps/
+*.prof
+
+# 🔄 BACKUP & TEMPORARY FILES
+backup/
+temp/
+tmp/
+*.tmp
+*.bak
+*.backup
+*_backup.*
+recovery/
+
+# 📈 ANALYTICS & REPORTING
+reports/
+analytics/
+metrics/
+dashboard_exports/
+*.report
+executive_reports/
+
+# 🎯 STREAMLIT SPECIFIC
+.streamlit/config.toml.backup
+streamlit_cache/
+.streamlit/credentials.toml
+
+# 🏗️ BUILD & COMPILATION
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+cover/
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# 📦 DEPENDENCY MANAGEMENT
+pip-log.txt
+pip-delete-this-directory.txt
+.installed.cfg
+*.egg
+
+# 🔬 JUPYTER & RESEARCH
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+*.ipynb
+
+# 🗄️ DATABASE FILES
+*.db
+*.sqlite
+*.sqlite3
+database.json
+db_backup/
+
+# 🔗 NODE MODULES (if any frontend components added)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🌍 ENVIRONMENT SPECIFIC
+.env.local
+.env.development
+.env.test
+.env.production
+
+# 📋 DOCUMENTATION DRAFTS
+drafts/
+notes.txt
+TODO.txt
+planning/
+meeting_notes/
+
+# 🎖️ TACTICAL INTELLIGENCE CLASSIFICATION
+CLASSIFIED/
+RESTRICTED/
+CONFIDENTIAL/
+tactical_plans/
+operational_data/
+
+# 🚨 INCIDENT RESPONSE
+incident_reports/
+security_logs/
+breach_documentation/
+forensics/
+
+# ⚙️ SYSTEM CONFIGURATION
+.venv/
+venv/
+ENV/
+env/
+.env
+.venv
+.ENV
+.env.local
+.env.development
+.env.test
+.env.production
+
+# 🔧 TOOLS & UTILITIES
+tools/local/
+scripts/private/
+utilities/dev/
+helpers/debug/
+
+# 📊 TABLEAU & BI TOOLS
+*.twb
+*.twbx
+*.tds
+*.tdsx
+tableau_extracts/
+bi_exports/
+
+# 🏭 ENTERPRISE INTEGRATION
+integration_keys/
+sso_config/
+ldap_config/
+enterprise_secrets/
+
+# 🚢 DOCKER & CONTAINERS (for future expansion)
+.dockerignore.local
+docker-compose.override.yml
+.docker/
+
+# 🎯 TACTICAL OPERATIONS
+mission_logs/
+operational_status/
+tactical_updates/
+command_decisions/
+
+# 📡 API INTEGRATIONS (Phase 3B prep)
+api_responses/
+carrier_data/
+real_time_feeds/
+integration_logs/
+
+# 🛠️ MAINTENANCE & MONITORING
+maintenance_logs/
+system_health/
+performance_baseline/
+monitoring_config/
+
+# 🎪 DEMO & PRESENTATION DATA
+demo_data/
+presentation_exports/
+screenshots/
+demo_scenarios/
+
+# END OF TACTICAL SECURITY CONFIGURATION
+# 🫡 All critical operational data protected from accidental exposure
+# 🛡️ Enterprise-grade security maintained throughout deployment
+# ⚡ Ready for immediate Streamlit Cloud deployment

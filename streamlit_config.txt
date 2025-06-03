@@ -1,0 +1,92 @@
+# 🫡 AMR PAN TACTICAL INTELLIGENCE PLATFORM
+# STREAMLIT CLOUD PRODUCTION CONFIGURATION
+# Phase 3A: Enterprise-Grade Settings
+
+[global]
+# Development vs Production Mode
+developmentMode = false
+logLevel = "info"
+unitTest = false
+
+[server]
+# Production Server Configuration
+port = 8501
+baseUrlPath = ""
+enableCORS = false
+enableXsrfProtection = true
+maxUploadSize = 200
+maxMessageSize = 200
+enableWebsocketCompression = true
+
+# Performance Optimization
+runOnSave = false
+allowRunOnSave = false
+fileWatcherType = "auto"
+
+# Security Headers
+enableStaticServing = true
+headless = true
+
+[browser]
+# Client-Side Configuration
+gatherUsageStats = false
+serverAddress = "localhost"
+serverPort = 8501
+
+[theme]
+# Professional Tactical Theme
+primaryColor = "#007bff"           # Tactical Blue
+backgroundColor = "#ffffff"        # Clean White
+secondaryBackgroundColor = "#f8f9fa"  # Light Gray
+textColor = "#212529"             # Dark Text
+
+# Professional Font Stack
+font = "sans serif"
+
+[client]
+# Client Performance Settings
+caching = true
+displayEnabled = true
+showErrorDetails = false          # Hide errors in production
+toolbarMode = "minimal"
+
+[runner]
+# Execution Environment
+magicEnabled = true
+installTracer = false
+fixMatplotlib = true
+postScriptGC = true
+fastReruns = true
+enforceSerializableSessionState = true
+
+[logger]
+# Logging Configuration for Production
+level = "INFO"
+messageFormat = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+[deprecation]
+# Future Compatibility
+showPyplotGlobalUse = false
+showfileUploaderEncoding = false
+
+# 🎖️ TACTICAL CONFIGURATION NOTES:
+# - Optimized for Streamlit Cloud deployment
+# - Security-hardened for production use
+# - Performance tuned for large dataset processing
+# - Professional theme matching tactical branding
+# - Error handling configured for user experience
+# - Caching enabled for optimal performance
+
+# 🛡️ SECURITY FEATURES:
+# - XSRF protection enabled
+# - Error details hidden from end users
+# - CORS properly configured
+# - File upload limits set for security
+# - Session state serialization enforced
+
+# 🚀 PERFORMANCE OPTIMIZATIONS:
+# - Fast reruns enabled
+# - Caching activated
+# - Memory management optimized
+# - File operations streamlined
+# - WebSocket compression enabled

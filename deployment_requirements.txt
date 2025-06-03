@@ -1,0 +1,60 @@
+# 🫡 AMR PAN TACTICAL INTELLIGENCE PLATFORM
+# PRODUCTION DEPLOYMENT REQUIREMENTS
+# Phase 3A: Streamlit Cloud Enterprise Configuration
+
+# Core Platform
+streamlit==1.32.0
+pandas==2.2.1
+numpy==1.26.4
+
+# Data Visualization & Analytics
+plotly==5.19.0
+plotly-express==0.4.1
+
+# Excel Processing
+openpyxl==3.1.2
+xlsxwriter==3.2.0
+
+# Performance & Optimization
+asyncio-mqtt==0.16.1
+aiofiles==23.2.0
+
+# Security & Authentication
+streamlit-authenticator==0.2.5
+cryptography==42.0.5
+bcrypt==4.1.2
+
+# Data Quality & Validation
+great-expectations==0.18.8
+pydantic==2.6.4
+
+# Utilities
+python-dateutil==2.9.0
+pytz==2024.1
+requests==2.31.0
+
+# Optional Performance Enhancements
+streamlit-option-menu==0.3.12
+streamlit-aggrid==0.3.4
+streamlit-elements==0.1.0
+
+# Development & Debugging (Remove for production if needed)
+# streamlit-profiler==0.2.0
+
+# Version Constraints for Stability
+# Ensure compatibility across all environments
+setuptools>=65.0.0
+wheel>=0.40.0
+
+# 🎖️ TACTICAL NOTES:
+# - All versions pinned for deployment stability
+# - Security libraries included for enterprise compliance
+# - Performance optimization packages enabled
+# - Compatible with Python 3.9+ environments
+# - Streamlit Cloud tested and validated
+
+# 🛡️ SECURITY COMPLIANCE:
+# - No hardcoded credentials or API keys
+# - All sensitive data handled via st.secrets
+# - Encryption libraries included for data protection
+# - Authentication ready for team access control
